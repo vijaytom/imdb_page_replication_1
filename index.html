@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+        <script>
+            $('#myBtn').click(function () {
+                var far = $('div.rowoper').width();
+                var pos = $('div.rowoper').scrollLeft() + far;
+                $('div.rowoper').animate({ scrollLeft: pos }, 1000, 'easeOutQuad');
+            });
+        </script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #121212;
+            position: relative;
+            display: flex;
+            position: sticky;
+            width: 100%;
+            height: 56px;
+        }
+
+        .btn1 {
+            height: 40px;
+        }
+
+        .search1 {
+            border-right: 1px solid #808080;
+        }
+
+        .fa-caret-down {
+            color: #808080;
+        }
+
+        .fa-caret-down1 {
+            color: white;
+        }
+
+        .input-group {
+            width: 700px;
+            height: 32px;
+            position: relative;
+            top: 0px;
+        }
+
+        .form-control,
+        .btn2 {
+            height: 32px;
+        }
+
+        .main1 {
+            position: relative;
+            min-width: 1260px;
+            min-height: 560px;
+        }
+
+        .carousel-inner1 {
+            position: relative;
+            top: -50px;
+        }
+
+        .carousel-inner2 {
+            position: relative;
+            top: 50px;
+        }
+
+        .carouselmain {
+            width: 1250px;
+            height: 560px;
+            position: relative;
+            top: 0px;
+            left: 5px;
+        }
+
+        .carouselleft {
+            width: 837px;
+            height: 560px;
+            position: relative;
+            top: -2px;
+            left: -2px;
+        }
+
+        .carouselright {
+            width: 404px;
+            height: 560px;
+            position: relative;
+            top: -562px;
+            left: 844px;
+
+        }
+
+        .gradient1 {
+            width: 831px;
+            height: 560px;
+            position: relative;
+            top: -1122px;
+        }
+
+        .gradient2 {
+            width: 838px;
+            height: 140px;
+            position: relative;
+            top: 390px;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 1));
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 1));
+            z-index: 2;
+        }
+
+        .button1 {
+            width: 1240px;
+            height: 50px;
+            position: relative;
+            top: 250px;
+            z-index: 5;
+        }
+
+        .rowoper {
+            width: 1240px;
+            overflow: hidden;
+        }
+
+        .one_1 {
+            width: 1240px;
+            display: inline-flex;
+        }
+
+
+        .gradient_front {
+            position: relative;
+            top: -190px;
+            height: 220px;
+            z-index: 3;
+        }
+
+        .carousel-control-next-icon {
+            position: relative;
+            top: -90px;
+        }
+
+        .carousel-control-prev-icon {
+            position: relative;
+            top: -90px;
+        }
+
+        .img_rec2 {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .four {
+            width: 490px;
+        }
+
+        .rower2 {
+            width: 660px;
+            height: 180px;
+            position: absolute;
+            left: 44px;
+        }
+
+        .posup1 {
+            font-size: medium;
+        }
+
+        .newsimg1 {
+            width: 99px;
+            height: 142px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .newstext2 {
+            width: 268px;
+            position: relative;
+            left: 10px;
+        }
+
+        .timer2 {
+            font-size: 18px;
+        }
+
+        .posup1 {
+            position: relative;
+            top: -16px;
+        }
+
+        .right_list {
+            background-image: linear-gradient(to top, rgba(255, 0, 0, 0), rgb(15, 15, 15, 1));
+            width: 380px;
+            height: 460px;
+            position: relative;
+            right: -7px;
+            top: -10px;
+            overflow: auto;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        .newstext1 {
+            width: 268px;
+            position: relative;
+            left: 10px;
+        }
+
+        .huj {
+            color: gold;
+            position: relative;
+            padding: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            position: relative;
+            left: -20px;
+        }
+
+        .container {
+            min-width: 1250px;
+        }
+
+        .img1 {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .landscape {
+            height: 396;
+            width: 222;
+        }
+
+        .portrait {
+            width: 182px;
+            height: 460px;
+        }
+
+        .fa-star {
+            color: gold;
+        }
+
+        .fa-star1 {
+            color: #4070b0;
+            position: relative;
+            top: -32px;
+        }
+
+        .fa-ticket-simple {
+            position: relative;
+            transform: rotate(130deg);
+        }
+
+        .tabletag_main {
+            position: relative;
+            min-width: 1240px;
+            min-height: 200px;
+        }
+
+        .smallline {
+            border-right: 2px solid gold;
+            position: relative;
+            top: 5px;
+        }
+
+        .colb {
+            position: relative;
+            left: 6px;
+            width: 616px;
+            height: 66px;
+        }
+
+        .colb2 {
+            position: relative;
+            left: 6px;
+            width: 616px;
+            height: 66px;
+            background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(15, 15, 15, 1));
+        }
+
+        .colb3 {
+            position: relative;
+            left: 6px;
+            width: 616px;
+            height: 66px;
+            background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(15, 15, 15, 1));
+        }
+
+        .colb4 {
+            position: relative;
+            left: 6px;
+            width: 616px;
+            height: 66px;
+        }
+
+        .colb5 {
+            position: relative;
+            left: 6px;
+            width: 616px;
+            height: 66px;
+        }
+
+        .colb6 {
+            position: relative;
+            left: 6px;
+            width: 616px;
+            height: 66px;
+            background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(15, 15, 15, 1));
+        }
+
+        .main123 {
+            width: 550px;
+            height: 66px;
+            position: relative;
+            left: 8px;
+        }
+
+        .main123left {
+            width: 464px;
+            height: 66px;
+            position: relative;
+            top: -3px;
+        }
+
+        .main123right {
+            width: 74px;
+            height: 66px;
+            position: relative;
+            top: -68px;
+            left: 460px;
+        }
+
+        .fa-ticket-simple1 {
+            color: #4070b0;
+            position: relative;
+            top: 16px;
+            left: 20px;
+        }
+
+        .p_down {
+            position: relative;
+            top: 12px;
+            right: 335px;
+            color: #808080;
+        }
+
+        .p_up {
+
+            color: #808080;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .align_browse {
+            position: relative;
+            top: -22px;
+        }
+
+        .fa-angle-right_5 {
+            position: relative;
+            top: 2px;
+        }
+
+        #tomcat {
+            color: white;
+        }
+
+        .carto {
+            width: 208px;
+            height: 260px;
+        }
+
+        .timer1 {
+            font-size: 12px;
+        }
+
+        .carto_in {
+            position: relative;
+            right: 14px;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .img_circle1 {
+            width: 206px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .newsava {
+            width: 400px;
+            height: 134px;
+        }
+
+        .img_rec1 {
+            width: 88px;
+            height: 132px;
+            object-fit: cover;
+        }
+
+        .newsimg {
+            width: 88px;
+            height: 132px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+        }
+
+        .btn10 {
+            border: 2px solid #a5a5a5;
+            border-radius: 18px;
+        }
+
+        .newstext {
+            width: 300px;
+            position: relative;
+            left: 10px;
+        }
+
+        .posup {
+            position: relative;
+            top: -16px;
+        }
+
+        .smalltop {
+            position: relative;
+            top: -20px;
+            color: #a5a5a5;
+        }
+
+        .card {
+            color: white;
+            background-color: #1a1a1a;
+        }
+
+        .card-text {
+            position: relative;
+            top: -30px;
+        }
+
+        .btn5 {
+            background-color: #2e2e2e;
+            color: #4070b0;
+            position: relative;
+            top: -32px;
+        }
+
+        .navbars {
+            width: 980px;
+            height: 50px;
+        }
+
+
+        .fa-bookmark {
+            color: #919191;
+        }
+
+        .fa-bookmark1 {
+            color: #1f1f1f;
+        }
+
+        .fa-bookmark2 {
+            color: #1f1f1f;
+            position: relative;
+            left: 20px;
+        }
+
+        .fa-bookmark3 {
+            color: #1f1f1f;
+            position: relative;
+            left: 20px;
+        }
+
+
+        .fa-plus1 {
+            position: relative;
+            left: -26px;
+        }
+
+        .dr1 {
+            width: 392px;
+            height: 78px;
+        }
+
+        .fa-plus2 {
+            position: relative;
+            left: -6px;
+            top: -4px;
+        }
+
+        .fa-plus3 {
+            position: relative;
+            left: 1px;
+            top: -4px;
+        }
+
+        .btn9 {
+            width: 165px;
+        }
+
+        .carousel {
+            position: relative;
+            top: -35px;
+            height: 200px;
+        }
+
+        .carousel,
+        .img5 {
+            flex-shrink: 0;
+            min-width: 100%;
+            min-height: 100%
+        }
+
+        .nav-link1 {
+            position: relative;
+            top: 6px;
+            border-bottom: 3px solid gold;
+            border-radius: 2px;
+            line-height: 12px;
+        }
+
+        .fa-play {
+            color: #808080;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn6 {
+            background-color: #1a1a1a;
+            color: white;
+            position: relative;
+            top: -26px;
+        }
+
+        .cola {
+            width: 600px;
+            height: 40px;
+        }
+
+        .btn7 {
+            width: 285px;
+        }
+
+        .btn8 {
+            width: 285px;
+        }
+
+        .h2 {
+            color: gold;
+        }
+
+        .fa-chevron-right {
+            color: #4070b0;
+            position: relative;
+            top: 2px;
+        }
+
+        .fa-chevron-right1 {
+            color: white;
+            position: relative;
+            top: 2px;
+        }
+
+        .watchlist1 {
+            position: relative;
+            left: -10px;
+        }
+
+        .btn4 {
+            border-left: 3px solid gold;
+            border-radius: 2px;
+            line-height: 12px;
+        }
+
+        .img2 {
+            width: 390px;
+            height: 222px;
+        }
+
+        .signimdb {
+            height: 250px;
+        }
+
+        footer {
+            width: 1260px;
+        }
+
+        .rower {
+            width: 800px;
+        }
+
+        .btn11 {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .fa-arrow-up-right-from-square1 {
+            color: white;
+        }
+
+        .a_outline {
+            border: 2px dashed red;
+        }
+
+        .b_outline {
+            border: 2px dashed rgb(9, 255, 0);
+        }
+
+        .c_outline {
+            border: 2px dashed rgb(25, 0, 255);
+        }
+
+        .fa-bars {
+            color: #808080;
+        }
+
+        .fa-magnifying-glass {
+            color: #808080;
+        }
+
+        .fa-facebook-square {
+            color: white;
+        }
+
+        .fa-instagram {
+            color: white;
+        }
+
+        .fa-twitch {
+            color: white;
+        }
+
+        .fa-twitter {
+            color: white;
+        }
+
+        .fa-youtube {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <img src="logo.png" alt="IMDB" style="width: 64px; height: 32px;">
+            <button class="btn btn1" style="background-color:#121212 ; color: white;">
+                <i class="fa-solid fa-bars"></i> Menu</button>
+            <div class="input-group">
+                <button class="btn btn2 d-flex align-items-center bg-light" type="button" id="inputGroupFileAddon04">All
+                </button>
+                <i class="fa-solid fa-caret-down d-flex align-items-center bg-light search1"></i>
+                <input type="text" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"
+                    aria-label="Upload">
+                <button class="btn btn3 d-flex align-items-center bg-light" type="button" id="inputGroupFileAddon04"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <img src="logopro.png" alt="IMDB Pro" style="width: 52px; height: 13px;" />
+            <button class="btn btn1" style="background-color:#121212 ; color: white;">
+                <i class="fa-solid fa-bookmark"></i> Watchlist</button>
+            <button class="btn btn1" style="background-color:#121212 ; color: white;">
+                Sign In</button>
+            <button class="btn btn1" style="background-color:#121212 ; color: white;">
+                EN <i class="fa-solid fa-caret-down fa-caret-down1"></i></button>
+        </div>
+    </header>
+    <main class=" mt-2 main1">
+        <div class="carouselmain">
+            <div class="carouselleft">
+                <div class="gradient2"></div>
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner carousel-inner1">
+                        <div class="carousel-item active">
+                            <img src="main/3.jpg" class="d-block w-100 img5" alt="...">
+                            <div class="gradient_front">
+                                <div class="newsava d-flex align-items-top d-block mt-3">
+                                    <div class="newsimg1">
+                                        <img src="main/burn.jpg" class="img_rec2" alt="Benedict" />
+                                    </div>
+                                    <div class="newstext2">
+                                        <div class="rower2 d-flex align-items-center">
+                                            <i class="fa-regular fa-circle-play fa-5x"></i>&nbsp;&nbsp;
+                                            <div class="four">
+                                                <h3 class="mb-4"><b>‘Heartstopper’ Breakout Yasmin Finney Joins ‘Doctor
+                                                        Who’
+                                                        as Rose</b></h2>
+                                                    <small class="posup1" style="color:#969696 ;"><b>May 16 Variety - TV
+                                                            News</b></small>
+                                            </div>
+                                            <small class="timer2" style="color:#969696"><b>3:44</b></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="main/4.jpg" class="d-block w-100 img5" alt="...">
+                            <div class="gradient_front">
+                                <div class="newsava d-flex align-items-top d-block mt-3">
+                                    <div class="newsimg1">
+                                        <img src="main/burn.jpg" class="img_rec2" alt="Benedict" />
+                                    </div>
+                                    <div class="newstext2">
+                                        <div class="rower2 d-flex align-items-center">
+                                            <i class="fa-regular fa-circle-play fa-5x"></i>&nbsp;&nbsp;
+                                            <div class="four">
+                                                <h3 class="mb-4"><b>‘Heartstopper’ Breakout Yasmin Finney Joins ‘Doctor
+                                                        Who’
+                                                        as Rose</b></h2>
+                                                    <small class="posup1" style="color:#969696 ;"><b>May 16 Variety - TV
+                                                            News</b></small>
+                                            </div>
+                                            <small class="timer2" style="color:#969696"><b>3:44</b></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                </div>
+            </div>
+
+            <div class="carouselright">
+                <h5 class="huj"><b>Up next</b></h5><br>
+                <div class="right_list">
+                    <ul>
+                        <li>
+                            <div class="newsava d-flex align-items-top mt-3">
+                                <div class="newsimg">
+                                    <img src="main/burn.jpg" class="img_rec1" alt="Benedict" />
+                                </div>
+                                <div class="newstext1">
+                                    <i class="fa-regular fa-circle-play fa-2x">&nbsp;<small class="timer1"
+                                            style="color:#969696">3:44</small></i>
+                                    <p><b>‘Heartstopper’ Breakout Yasmin Finney Joins ‘Doctor Who’ as Rose</b></p>
+                                    <small class="posup" style="color:#969696 ;">May 16 Variety - TV News</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="newsava d-flex align-items-top mt-3">
+                                <div class="newsimg">
+                                    <img src="main/burn.jpg" class="img_rec1" alt="Benedict" />
+                                </div>
+                                <div class="newstext1">
+                                    <i class="fa-regular fa-circle-play fa-2x">&nbsp;<small class="timer1"
+                                            style="color:#969696">3:44</small></i>
+                                    <p><b>‘Heartstopper’ Breakout Yasmin Finney Joins ‘Doctor Who’ as Rose</b></p>
+                                    <small class="posup" style="color:#969696 ;">May 16 Variety - TV News</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="newsava d-flex align-items-top">
+                                <div class="newsimg">
+                                    <img src="main/burn.jpg" class="img_rec1" alt="Benedict" />
+                                </div>
+                                <div class="newstext1">
+                                    <i class="fa-regular fa-circle-play fa-2x">&nbsp;<small class="timer1"
+                                            style="color:#969696">3:44</small></i>
+                                    <p><b>‘Heartstopper’ Breakout Yasmin Finney Joins ‘Doctor Who’ as Rose</b></p>
+                                    <small class="posup" style="color:#969696 ;">May 16 Variety - TV News</small>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="align_browse d-flex align-items-center">
+                    <button class="btn btn13"><b style="color:white; font-size: 20px;">Browse trailers&nbsp;</b><i
+                            class="fa-solid fa-angle-right fa-angle-right_5 fa-sm" id="tomcat"></i></button>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </main>
+    <div class="container mt-4">
+        <h2 class="h2">Featured Today</h2><br>
+        <div class="row">
+            <div class="col col-md-4 landscape">
+                <img src="main/1.jpg" class="img1" alt="img">
+                <a href="#"><b>The Best Movies & Shows to Watch in May</b></a>
+            </div>
+            <div class="col col-md-4 landscape mb-4">
+                <img src="main/1.jpg" class="img1" alt="img">
+                <a href="#"><b>The Best New and Upcoming Comedies</b></a>
+            </div>
+        </div>
+        <div class="mt-2 d-flex justify-content-between align-items-center">
+            <h2 class="h2">What to Watch</h2>
+            <button class="btn"><b style="color:#4070b0;">Get more recommendation </b><i
+                    class="fa-solid fa-chevron-right fa-sm"></i></button>
+        </div>
+        <button class="btn btn4 mt-4"><b style="color:white; font-size: 26px;">From your Watchlist <i
+                    class="fa-solid fa-chevron-right fa-chevron-right1 fa-sm"></i></b></button>
+        <div class="mt-3 signimdb mb-4">
+            <div class="mt-5 d-flex align-items-center justify-content-center">
+                <i class="fa-solid fa-bookmark fa-bookmark1 fa-3x"></i><i class="fa-solid fa-plus fa-plus1 fa-lg"></i>
+            </div>
+            <center class="mt-3">
+                <p><b>Sign in to access your Watchlist</b></p>
+                <p>Save shows and movies to keep track of what you want to watch.</p>
+                <button class="btn btn-warning btn9">Sign in to IMDb</button>
+            </center>
+        </div>
+        <button class="btn btn4"><b style="color:white; font-size: 26px;">Fan favorites <i
+                    class="fa-solid fa-chevron-right fa-chevron-right1 fa-sm"></i></b></button>
+        <div class="mb-2"></div>
+        <a href="#">
+            <p>This week's top TV and movies</p>
+        </a>
+        
+        <!-- <div class="button1 a_outline">
+            <button id="myBtn" title="Go to top">Top</button>
+        </div> -->
+        <div class="rowoper mb-3">
+            <div class="one_1">
+                <div class="col">
+                    <div class="card portrait">
+                        <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                        <div class="card-body">
+                            <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                        class="fa-regular fa-star fa-star1"></i></center>
+                            </p>
+                            <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                                <center><button class="btn btn5"><i class="fa-solid fa-plus"></i> Watchlist</button>
+                                </center>
+                                <center><button class="btn btn6"><i
+                                            class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mx-4">
+                    <div class="card portrait">
+                        <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                        <div class="card-body">
+                            <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                        class="fa-regular fa-star fa-star1"></i></center>
+                            </p>
+                            <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                                <center><button class="btn btn5"><i class="fa-solid fa-plus"></i> Watchlist</button>
+                                </center>
+                                <center><button class="btn btn6"><i
+                                            class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card portrait">
+                        <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                        <div class="card-body">
+                            <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                        class="fa-regular fa-star fa-star1"></i></center>
+                            </p>
+                            <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                                <center><button class="btn btn5"><i class="fa-solid fa-plus"></i> Watchlist</button>
+                                </center>
+                                <center><button class="btn btn6"><i
+                                            class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mx-4">
+                    <div class="card portrait">
+                        <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                        <div class="card-body">
+                            <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                        class="fa-regular fa-star fa-star1"></i></center>
+                            </p>
+                            <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                                <center><button class="btn btn5"><i class="fa-solid fa-plus"></i> Watchlist</button>
+                                </center>
+                                <center><button class="btn btn6"><i
+                                            class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card portrait">
+                        <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                        <div class="card-body">
+                            <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                        class="fa-regular fa-star fa-star1"></i></center>
+                            </p>
+                            <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                                <center><button class="btn btn5"><i class="fa-solid fa-plus"></i> Watchlist</button>
+                                </center>
+                                <center><button class="btn btn6"><i
+                                            class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mx-4">
+                    <div class="card portrait">
+                        <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                        <div class="card-body">
+                            <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                        class="fa-regular fa-star fa-star1"></i></center>
+                            </p>
+                            <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                                <center><button class="btn btn5"><i class="fa-solid fa-plus"></i> Watchlist</button>
+                                </center>
+                                <center><button class="btn btn6"><i
+                                            class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mx-1">
+                    <div class="card portrait">
+                        <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                        <div class="card-body">
+                            <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                        class="fa-regular fa-star fa-star1"></i></center>
+                            </p>
+                            <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                                <center><button class="btn btn5"><i class="fa-solid fa-plus"></i> Watchlist</button>
+                                </center>
+                                <center><button class="btn btn6"><i
+                                            class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mx-4">
+                    <div class="card portrait">
+                        <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                        <div class="card-body">
+                            <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                        class="fa-regular fa-star fa-star1"></i></center>
+                            </p>
+                            <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                                <center><button class="btn btn5"><i class="fa-solid fa-plus"></i> Watchlist</button>
+                                </center>
+                                <center><button class="btn btn6"><i
+                                            class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <button class="btn btn4"><b style="color:white; font-size: 26px;">More to watch<i
+                    class="fa-solid fa-chevron-right fa-chevron-right1 fa-sm"></i></b></button>
+        <div class="mb-2"></div>
+        <a href="#">
+            <p>IMDb helps you select the perfect next show or movie to watch.</p>
+        </a>
+        <div class="cola d-flex justify-content-between mb-5">
+            <button class="btn btn-outline-light btn7">Watch Guide</button>
+            <button class="btn btn-outline-light btn8">Most Popular</button>
+        </div>
+        <h2 class="h2 mb-4">Exclusive videos</h2><br>
+        <button class="btn btn4"><b style="color:white; font-size: 26px;">IMDb Originals<i
+                    class="fa-solid fa-chevron-right fa-chevron-right1 fa-sm"></i></b></button>
+        <div class="mb-2"></div>
+        <a href="#">
+            <p>Celebrity interviews, trending entertainment stories, and expert analysis</p>
+        </a>
+        <div class="row mb-5">
+            <div class="col col-md-4 landscape">
+                <iframe class="img2" src="https://www.youtube.com/embed/aWzlQ2N6qqg" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <a href="#"><b>The Best Movies & Shows to Watch in May</b></a>
+            </div>
+            <div class="col col-md-4 landscape">
+                <iframe class="img2" src="https://www.youtube.com/embed/aWzlQ2N6qqg" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <a href="#"><b>The Best Movies & Shows to Watch in May</b></a>
+            </div>
+            <div class="col col-md-4 landscape">
+                <iframe class="img2" src="https://www.youtube.com/embed/aWzlQ2N6qqg" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <a href="#"><b>The Best Movies & Shows to Watch in May</b></a>
+            </div>
+        </div>
+        <h2 class="h2 mb-2">Explore what's streaming</h2><br>
+        <div class="navbars d-flex align-items-center mb-2">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link nav-link1" aria-current="page" href="#">PRIME VIDEO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">NETFLIX</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">HOTSTAR</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">MX PLAYER</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">JIO CINEMA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">SONTLIV</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">EROSNOW</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">VOOT</a>
+                </li>
+            </ul>
+        </div>
+        <a href="#"><b>Included with Prime</b></a>
+        <div class="mb-3"></div>
+        <div class="row row-cols-6 row-cols-md-6 g-3 mb-4">
+            <div class="col">
+                <div class="card portrait">
+                    <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                    class="fa-regular fa-star fa-star1"></i></center>
+                        </p>
+                        <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                            <center><button class="btn btn5">Watchlist &nbsp;<i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                            </center>
+                            <center><button class="btn btn6"><i
+                                        class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card portrait">
+                    <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                    class="fa-regular fa-star fa-star1"></i></center>
+                        </p>
+                        <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                            <center><button class="btn btn5">Watchlist &nbsp;<i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                            </center>
+                            <center><button class="btn btn6"><i
+                                        class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card portrait">
+                    <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                    class="fa-regular fa-star fa-star1"></i></center>
+                        </p>
+                        <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                            <center><button class="btn btn5">Watchlist &nbsp;<i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                            </center>
+                            <center><button class="btn btn6"><i
+                                        class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card portrait">
+                    <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                    class="fa-regular fa-star fa-star1"></i></center>
+                        </p>
+                        <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                            <center><button class="btn btn5">Watchlist &nbsp;<i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                            </center>
+                            <center><button class="btn btn6"><i
+                                        class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card portrait">
+                    <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                    class="fa-regular fa-star fa-star1"></i></center>
+                        </p>
+                        <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                            <center><button class="btn btn5">Watchlist &nbsp;<i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                            </center>
+                            <center><button class="btn btn6"><i
+                                        class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card portrait">
+                    <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                    class="fa-regular fa-star fa-star1"></i></center>
+                        </p>
+                        <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                            <center><button class="btn btn5">Watchlist &nbsp;<i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                            </center>
+                            <center><button class="btn btn6"><i
+                                        class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="h2 mb-3">Explore Movies & TV shows</h2><br>
+        <button class="btn btn4"><b style="color:white; font-size: 26px;">In theatres<i
+                    class="fa-solid fa-chevron-right fa-chevron-right1 fa-sm"></i></b></button>
+        <div class="mb-2"></div>
+        <a href="#">
+            <p style="color: #a5a5a5;">Showtimes near you</p>
+        </a>
+        <div class="mb-3"></div>
+        <div class="row row-cols-6 row-cols-md-6 g-3 mb-4">
+            <div class="col">
+                <div class="card portrait">
+                    <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                    class="fa-regular fa-star fa-star1"></i></center>
+                        </p>
+                        <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                            <center><button class="btn btn5"><i
+                                        class="fa-solid fa-ticket-simple"></i>&nbsp;&nbsp;Watchlist</button>
+                            </center>
+                            <center><button class="btn btn6"><i
+                                        class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card portrait">
+                    <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                    class="fa-regular fa-star fa-star1"></i></center>
+                        </p>
+                        <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                            <center><button class="btn btn5"><i
+                                        class="fa-solid fa-ticket-simple"></i>&nbsp;&nbsp;Watchlist</button>
+                            </center>
+                            <center><button class="btn btn6"><i
+                                        class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card portrait">
+                    <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                    class="fa-regular fa-star fa-star1"></i></center>
+                        </p>
+                        <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                            <center><button class="btn btn5"><i
+                                        class="fa-solid fa-ticket-simple"></i>&nbsp;&nbsp;Watchlist</button>
+                            </center>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card portrait">
+                    <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                    class="fa-regular fa-star fa-star1"></i></center>
+                        </p>
+                        <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                            <center><button class="btn btn5"><i
+                                        class="fa-solid fa-ticket-simple"></i>&nbsp;&nbsp;Watchlist</button>
+                            </center>
+                            <center><button class="btn btn6"><i
+                                        class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card portrait">
+                    <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                    class="fa-regular fa-star fa-star1"></i></center>
+                        </p>
+                        <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                            <center><button class="btn btn5"><i
+                                        class="fa-solid fa-ticket-simple"></i>&nbsp;&nbsp;Watchlist</button>
+                            </center>
+                            <center><button class="btn btn6"><i
+                                        class="fa-solid fa-play"></i>&nbsp;&nbsp;Trailer</button></center>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card portrait">
+                    <img src="main/2.jpg" class="card-img-top img1" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><i class="fa-solid fa-star"></i> 7.4 <center><i
+                                    class="fa-regular fa-star fa-star1"></i></center>
+                        </p>
+                        <p class="card-text"><b>Doctor Strange in the Multiverse of Madness</b>
+                            <center><button class="btn btn5"><i
+                                        class="fa-solid fa-ticket-simple"></i>&nbsp;&nbsp;Watchlist</button>
+                            </center>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn4"><b style="color:white; font-size: 26px;">Top box office (US)<i
+                    class="fa-solid fa-chevron-right fa-chevron-right1 fa-sm"></i></b></button>
+        <div class="mb-2"></div>
+        <a href="#">
+            <p style="color: #a5a5a5;">Weekend of May 13-15</p>
+        </a>
+        <div class="mb-3"></div>
+        <div class="tabletag_main mb-5">
+            <div class="row g-2">
+                <div class="colb d-flex align-items-center">
+                    <p class="smallline">1&nbsp;</p>
+                    <i class="fa-solid fa-bookmark fa-bookmark2 fa-3x"></i><i
+                        class="fa-solid fa-plus fa-plus2 fa-lg"></i>
+                    <div class="main123">
+                        <div class="main123left d-flex align-items-center">
+                            <p><b>Doctor Strange in the Multiverse of Madness</b></p><br>
+                            <small class="p_down"><b>$ 64M</b></small>
+                        </div>
+                        <div class="main123right">
+                            <i class="fa-solid fa-ticket-simple fa-ticket-simple1 fa-lg"></i>
+                        </div>
+                    </div>
+                </div>&nbsp;
+                <div class="colb2 d-flex align-items-center">
+                    <p class="smallline">4&nbsp;</p>
+                    <i class="fa-solid fa-bookmark fa-bookmark2 fa-3x"></i><i
+                        class="fa-solid fa-plus fa-plus2 fa-lg"></i>
+                    <div class="main123">
+                        <div class="main123left d-flex align-items-center">
+                            <p><b>Doctor Strange in the Multiverse of Madness</b></p><br>
+                            <small class="p_down"><b>$ 64M</b></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="colb3 d-flex align-items-center">
+                    <p class="smallline">2&nbsp;</p>
+                    <i class="fa-solid fa-bookmark fa-bookmark2 fa-3x"></i><i
+                        class="fa-solid fa-plus fa-plus2 fa-lg"></i>
+                    <div class="main123">
+                        <div class="main123left d-flex align-items-center">
+                            <p><b>Doctor Strange in the Multiverse of Madness</b></p><br>
+                            <small class="p_down"><b>$ 64M</b></small>
+                        </div>
+                    </div>
+                </div>&nbsp;
+                <div class="colb4 d-flex align-items-center">
+                    <p class="smallline">5&nbsp;</p>
+                    <i class="fa-solid fa-bookmark fa-bookmark2 fa-3x"></i><i
+                        class="fa-solid fa-plus fa-plus2 fa-lg"></i>
+                    <div class="main123">
+                        <div class="main123left d-flex align-items-center">
+                            <p><b>Doctor Strange in the Multiverse of Madness</b></p><br>
+                            <small class="p_down"><b>$ 64M</b></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="colb5 d-flex align-items-center">
+                    <p class="smallline">3&nbsp;</p>
+                    <i class="fa-solid fa-bookmark fa-bookmark2 fa-3x"></i><i
+                        class="fa-solid fa-plus fa-plus2 fa-lg"></i>
+                    <div class="main123">
+                        <div class="main123left d-flex align-items-center">
+                            <p><b>Doctor Strange in the Multiverse of Madness</b></p><br>
+                            <small class="p_down"><b>$ 64M</b></small>
+                        </div>
+                    </div>
+                </div>&nbsp;
+                <div class="colb6 d-flex align-items-center">
+                    <p class="smallline">6&nbsp;</p>
+                    <i class="fa-solid fa-bookmark fa-bookmark2 fa-3x"></i><i
+                        class="fa-solid fa-plus fa-plus2 fa-lg"></i>
+                    <div class="main123">
+                        <div class="main123left d-flex align-items-center">
+                            <p><b>Doctor Strange in the Multiverse of Madness</b></p><br>
+                            <small class="p_down"><b>$ 64M</b></small>
+                        </div>
+                    </div>
+                </div>
+                <!-- Force next columns to break to new line at md breakpoint and up -->
+                <!-- <div class="w-100 d-none d-md-block"></div> -->
+            </div>
+        </div>
+        <button class="btn btn4"><b style="color:white; font-size: 26px;">IMDb Originals<i
+                    class="fa-solid fa-chevron-right fa-chevron-right1 fa-sm"></i></b></button>
+        <div class="mb-2"></div>
+        <a href="#">
+            <p>Celebrity interviews, trending entertainment stories, and expert analysis</p>
+        </a>
+        <div class="row mb-5">
+            <div class="col col-md-4 landscape">
+                <iframe class="img2" src="https://www.youtube.com/embed/aWzlQ2N6qqg" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <div class="dr1">
+                    <div class="row ">
+                        <div class="col-2 d-flex align-items-center mt-1">
+                            <i class="fa-solid fa-bookmark fa-bookmark3 fa-2x"></i><i
+                                class="fa-solid fa-plus fa-plus3 fa-md"></i>
+                        </div>
+                        <div class="col mt-2">
+                            <small class="p_up"><b>MAY 27</b></small>
+                            <a href="#">
+                                <p>Doctor Strange in the Multiverse of Madness</p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col col-md-4 landscape">
+                <iframe class="img2" src="https://www.youtube.com/embed/aWzlQ2N6qqg" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <div class="dr1">
+                    <div class="row ">
+                        <div class="col-2 d-flex align-items-center mt-1">
+                            <i class="fa-solid fa-bookmark fa-bookmark3 fa-2x"></i><i
+                                class="fa-solid fa-plus fa-plus3 fa-md"></i>
+                        </div>
+                        <div class="col mt-2">
+                            <small class="p_up"><b>MAY 27</b></small>
+                            <a href="#">
+                                <p>Doctor Strange in the Multiverse of Madness</p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col col-md-4 landscape">
+                <iframe class="img2" src="https://www.youtube.com/embed/aWzlQ2N6qqg" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <div class="dr1">
+                    <div class="row ">
+                        <div class="col-2 d-flex align-items-center mt-1">
+                            <i class="fa-solid fa-bookmark fa-bookmark3 fa-2x"></i><i
+                                class="fa-solid fa-plus fa-plus3 fa-md"></i>
+                        </div>
+                        <div class="col mt-2">
+                            <small class="p_up"><b>MAY 27</b></small>
+                            <a href="#">
+                                <p>Doctor Strange in the Multiverse of Madness</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="h2 mb-3">Explore Movies & TV shows</h2><br>
+        <button class="btn btn4"><b style="color:white; font-size: 26px;">In theatres</b></button>
+        <div class="mb-3"></div>
+        <div class="row mb-4">
+            <div class="col col-md-4 landscape">
+                <img src="main/1.jpg" class="img1" alt="img">
+                <a href="#"><b>The Best Movies & Shows Coming in May</b></a>
+            </div>
+            <div class="col col-md-4 landscape mb-4">
+                <img src="main/1.jpg" class="img1" alt="img">
+                <a href="#"><b>The Best Movies & Shows Coming in May</b></a>
+            </div>
+            <div class="col col-md-4 landscape mb-4">
+                <img src="main/1.jpg" class="img1" alt="img">
+                <a href="#"><b>The Best Movies & Shows Coming in May</b></a>
+            </div>
+        </div>
+        <button class="btn btn4"><b style="color:white; font-size: 26px;">Born Today<i
+                    class="fa-solid fa-chevron-right fa-chevron-right1 fa-sm"></i></b></button>
+        <div class="mb-2"></div>
+        <a href="#">
+            <p style="color: #a5a5a5;">People born on May 17</p>
+        </a>
+        <div class="mb-2"></div>
+        <div class="thumbnail mb-4">
+            <div class="row d-flex justify-content-between">
+                <div class="carto">
+                    <div class="carto_in">
+                        <img src="main/bene.jpg" class="img_circle1" alt="Benedict" />
+                    </div>
+                    <div class="carto_out mt-2">
+                        <center>
+                            <p>Benedict Cumberbatch</p>
+                            <small class="smalltop">27</small>
+                        </center>
+                    </div>
+                </div>
+                <div class="carto">
+                    <div class="carto_in">
+                        <img src="main/bene.jpg" class="img_circle1" alt="Benedict" />
+                    </div>
+                    <div class="carto_out mt-2">
+                        <center>
+                            <p>Benedict Cumberbatch</p>
+                            <small class="smalltop">27</small>
+                        </center>
+                    </div>
+                </div>
+                <div class="carto">
+                    <div class="carto_in">
+                        <img src="main/bene.jpg" class="img_circle1" alt="Benedict" />
+                    </div>
+                    <div class="carto_out mt-2">
+                        <center>
+                            <p>Benedict Cumberbatch</p>
+                            <small class="smalltop">27</small>
+                        </center>
+                    </div>
+                </div>
+                <div class="carto">
+                    <div class="carto_in">
+                        <img src="main/bene.jpg" class="img_circle1" alt="Benedict" />
+                    </div>
+                    <div class="carto_out mt-2">
+                        <center>
+                            <p>Benedict Cumberbatch</p>
+                            <small class="smalltop">27</small>
+                        </center>
+                    </div>
+                </div>
+                <div class="carto">
+                    <div class="carto_in">
+                        <img src="main/bene.jpg" class="img_circle1" alt="Benedict" />
+                    </div>
+                    <div class="carto_out mt-2">
+                        <center>
+                            <p>Benedict Cumberbatch</p>
+                            <small class="smalltop">27</small>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn4"><b style="color:white; font-size: 26px;">Top News<i
+                    class="fa-solid fa-chevron-right fa-chevron-right1 fa-sm"></i></b></button>
+        <div class="mb-3"></div>
+        <div class="top_news d-flex justify-content-between mb-3">
+            <div class="newsava d-flex align-items-top">
+                <div class="newsimg">
+                    <img src="main/bene.jpg" class="img_rec1" alt="Benedict" />
+                </div>
+                <div class="newstext">
+                    <p><b>‘Heartstopper’ Breakout Yasmin Finney Joins ‘Doctor Who’ as Rose</b></p>
+                    <small class="posup">May 16 Variety - TV News</small>
+                </div>
+            </div>
+            <div class="newsava d-flex align-items-top">
+                <div class="newsimg">
+                    <img src="main/bene.jpg" class="img_rec1" alt="Benedict" />
+                </div>
+                <div class="newstext">
+                    <p><b>‘Heartstopper’ Breakout Yasmin Finney Joins ‘Doctor Who’ as Rose</b></p>
+                    <small class="posup">May 16 Variety - TV News</small>
+                </div>
+            </div>
+            <div class="newsava d-flex align-items-top">
+                <div class="newsimg">
+                    <img src="main/bene.jpg" class="img_rec1" alt="Benedict" />
+                </div>
+                <div class="newstext">
+                    <p><b>‘Heartstopper’ Breakout Yasmin Finney Joins ‘Doctor Who’ as Rose</b></p>
+                    <small class="posup">May 16 Variety - TV News</small>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-8">
+                <button class="btn btn-sm btn-outline-light btn10">Top News</button>
+                <button class="btn btn-sm btn-outline-light btn10">Movie News</button>
+                <button class="btn btn-sm btn-outline-light btn10">Tv News</button>
+                <button class="btn btn-sm btn-outline-light btn10">Celebrity News</button>
+            </div>
+        </div>
+        <h4 class="hty mb-4">Recently Viewed</h4><br>
+        <p><b>You have no recently viewed pages</b></p>
+    </div>
+    <footer>
+        <center>
+            <div class="row d-flex justify-content-center mb-4">
+                <div class="col-1">
+                    <i class="fa-brands fa-facebook-square fa-lg"></i>
+                </div>
+                <div class="col-1">
+                    <i class="fa-brands fa-instagram fa-lg"></i>
+                </div>
+                <div class="col-1">
+                    <i class="fa-brands fa-twitch fa-lg"></i>
+                </div>
+                <div class="col-1">
+                    <i class="fa-brands fa-twitter fa-lg"></i>
+                </div>
+                <div class="col-1">
+                    <i class="fa-brands fa-youtube fa-lg"></i>
+                </div>
+            </div>
+            <div class="rower d-flex justify-content-between">
+                <button class="btn btn11">Get the IMDb App&nbsp;<i
+                        class="fa-solid fa-arrow-up-right-from-square fa-arrow-up-right-from-square1"></i></button>
+
+                <button class="btn btn11">Help&nbsp;<i
+                        class="fa-solid fa-arrow-up-right-from-square fa-arrow-up-right-from-square1"></i></button>
+
+                <button class="btn btn11">Site Index&nbsp;<i
+                        class="fa-solid fa-arrow-up-right-from-square fa-arrow-up-right-from-square1"></i></button>
+
+                <button class="btn btn11">IMDbPro&nbsp;<i
+                        class="fa-solid fa-arrow-up-right-from-square fa-arrow-up-right-from-square1"></i></button>
+
+                <button class="btn btn11">Box Office Mojo&nbsp;<i
+                        class="fa-solid fa-arrow-up-right-from-square fa-arrow-up-right-from-square1"></i></button>
+
+                <button class="btn btn11">IMDb Developer&nbsp;<i
+                        class="fa-solid fa-arrow-up-right-from-square fa-arrow-up-right-from-square1"></i></button>
+            </div>
+            <div class="rower d-flex justify-content-between mb-3">
+                <button class="btn btn11">Press Room&nbsp;</button>
+
+                <button class="btn btn11">Advertising&nbsp;<i
+                        class="fa-solid fa-arrow-up-right-from-square fa-arrow-up-right-from-square1"></i></button>
+
+                <button class="btn btn11">Jobs&nbsp;<i
+                        class="fa-solid fa-arrow-up-right-from-square fa-arrow-up-right-from-square1"></i></button>
+
+                <button class="btn btn11">Conditions of Use&nbsp;</button>
+
+                <button class="btn btn11">Privacy Policy&nbsp;</button>
+
+                <button class="btn btn11">Internet-Based Ads&nbsp;<i
+                        class="fa-solid fa-arrow-up-right-from-square fa-arrow-up-right-from-square1"></i></button>
+            </div>
+            <div class="rower d-flex justify-content-center mb-2">
+                <img src="main/amazon.PNG" alt="an Amazon Company" />
+            </div>
+            <small style="color:#919191 ;">© 1990-2022 by IMDb.com, Inc.</small>
+        </center>
+    </footer>
+
+
+
+
+
+</body>
+
+</html>
